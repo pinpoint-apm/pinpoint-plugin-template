@@ -1,0 +1,18 @@
+serviceTypes:
+    - code: 999        # <short>
+      name: 'NAME'     # <String>
+      desc: 'DESC'     # <String> May be omitted, which will take the same value as name.
+      property:        # May be omitted, all properties defaulting to false.
+          terminal: true              # <boolean> May be omitted, defaulting to false.
+          queue: true                 # <boolean> May be omitted, defaulting to false.
+          recordStatistics: true      # <boolean> May be omitted, defaulting to false.
+          includeDestinationId: true  # <boolean> May be omitted, defaulting to false.
+      matcher:         # May be omitted
+          type: 'exact'    # <String> Any one of 'args', 'exact', 'none'
+          code: 100        # <int> Annotation key code - required only if type is 'exact'
+
+annotationKeys:
+    - code: 9999        # <int>
+      name: 'some.val'  # <String>
+      property:         # May be omitted, all properties defaulting to false.
+          viewInRecordSet: true  # <boolean> May be omitted, defaulting to false.
