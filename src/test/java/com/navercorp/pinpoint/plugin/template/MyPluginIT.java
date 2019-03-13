@@ -14,6 +14,11 @@
  */
 package com.navercorp.pinpoint.plugin.template;
 
+import com.navercorp.pinpoint.common.trace.AnnotationKey;
+import com.navercorp.pinpoint.common.trace.AnnotationKeyProvider;
+import com.navercorp.pinpoint.common.trace.ServiceType;
+import com.navercorp.pinpoint.common.trace.ServiceTypeProvider;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -27,9 +32,20 @@ import com.navercorp.pinpoint.test.plugin.PinpointPluginTestSuite;
 public class MyPluginIT {
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         PluginTestVerifier verifier = PluginTestVerifierHolder.getInstance();
         verifier.printCache();
         verifier.verifyTraceCount(0);
+    }
+
+    @Test
+    public void verifyTraceMeta() {
+        // see META-INF/pinpoint/type-provider.yml
+        final ServiceType serviceType = ServiceTypeProvider.getByCode(999);
+        Assert.assertNotNull(serviceType);
+        Assert.assertSame(serviceType, ServiceTypeProvider.getByName("NAME"));
+
+        final AnnotationKey annotationKey = AnnotationKeyProvider.getByCode(9999);
+        Assert.assertNotNull(annotationKey);
     }
 }

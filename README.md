@@ -1,2 +1,2 @@
 # pinpoint-plugin-template
-Pinpoint plugin project template. You can find plugin developer guide [here]()
+Pinpoint plugin project template. You can find the plugin developer guide [here](http://naver.github.io/pinpoint/plugindevguide.html).

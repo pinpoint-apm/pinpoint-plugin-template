@@ -19,6 +19,6 @@ package com.navercorp.pinpoint.plugin.template;
  *
  */
 public interface TestConstants {
-    public static final String VERSION = "1.5.2-SNAPSHOT";
+    public static final String VERSION = "1.9.0-SNAPSHOT";
     public static final String AGENT_PATH = "target/plugin-template-" + VERSION;
 }
